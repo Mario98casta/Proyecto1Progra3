@@ -30,9 +30,9 @@ public class HelloController {
             BtNuevo.setVisible(true);
         BtResultado.setVisible(false);
         TxTResultado.appendText("SE COLOCA EL RESULTADO");
-        TxtRecorridoPostorden.appendText("recorrido postorden");
-        TxtRecorridoInorden.appendText("recorrido inorden");
-        
+        TxtRecorridoPostorden.appendText("recorrido postorden 1");
+        TxtRecorridoInorden.appendText("recorrido inorden 1");
+
 
 
     }
