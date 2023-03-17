@@ -32,7 +32,11 @@ public class HelloController {
         TxTResultado.appendText("SE COLOCA EL RESULTADO");
         TxtRecorridoPostorden.appendText("recorrido postorden");
         TxtRecorridoInorden.appendText("recorrido inorden");
-        
+
+
+        String val = TxTResultado.getText().toString();
+        ClasePrincipal cl = new ClasePrincipal();
+        cl.EntradaDatos(val);
 
 
     }
@@ -44,6 +48,7 @@ public class HelloController {
         TxTResultado.clear();
         TxtRecorridoPostorden.clear();
         TxtRecorridoInorden.clear();
+
 
 
 
