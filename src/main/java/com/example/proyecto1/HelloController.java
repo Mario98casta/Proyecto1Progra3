@@ -2,15 +2,15 @@ package com.example.proyecto1;
 
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+
+import java.util.Optional;
 
 public class HelloController {
 
 
-
+    private static Object AlertType;
     @FXML
    public Button BtResultado;
     @FXML
@@ -30,12 +30,14 @@ public class HelloController {
             BtNuevo.setVisible(true);
         BtResultado.setVisible(false);
         TxTResultado.appendText("SE COLOCA EL RESULTADO");
-        TxtRecorridoPostorden.appendText("recorrido postorden 1");
-        TxtRecorridoInorden.appendText("recorrido inorden 1");
-
+        TxtRecorridoPostorden.appendText("recorrido postorden ");
+        TxtRecorridoInorden.appendText("recorrido inorden ");
+        int ValorNumerio = showNumericInputDialog("A");
+        TxTResultado.setText(String.valueOf(ValorNumerio));
 
 
     }
+
     @FXML
     protected void CLICKBTnuevo() {
         BtNuevo.setVisible(false);
@@ -61,4 +63,36 @@ public class HelloController {
         BtResultado.setCursor(Cursor.DEFAULT);
 
     }
+    public static int showNumericInputDialog( String contentText) {
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("De Variable A Valor");
+        dialog.setHeaderText("Introduce valor de "+contentText+":");
+        dialog.setContentText("Valor Numerico:");
+
+        String resultText;
+        int num = 0;
+        do {
+            Optional<String> result = dialog.showAndWait();
+            if (result.isPresent()) {
+                resultText = result.get();
+                try {
+                    num = Integer.parseInt(resultText);
+                } catch (NumberFormatException e) {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Error");
+                    alert.setContentText("El valor introducido no es un número entero válido.");
+                    alert.showAndWait();
+                }
+            } else {
+                resultText = "";
+                break;
+            }
+        } while (num == 0);
+
+        return num;
+    }
+
+
+
+
 }
