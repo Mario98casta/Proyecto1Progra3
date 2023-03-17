@@ -7,6 +7,9 @@ public class ClasePrincipal {
     }
 
     public  String  EntradaDatos(String val){
+        Arbol arbol = new Arbol();
+        arbol.CrearArbol(val);
         return "master";
     }
+
 }

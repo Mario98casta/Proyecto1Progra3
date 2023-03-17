@@ -29,12 +29,8 @@ public class HelloController {
     protected void CLICKBTResultado() {
             BtNuevo.setVisible(true);
         BtResultado.setVisible(false);
-        TxTResultado.appendText("SE COLOCA EL RESULTADO");
-        TxtRecorridoPostorden.appendText("recorrido postorden");
-        TxtRecorridoInorden.appendText("recorrido inorden");
 
-
-        String val = TxTResultado.getText().toString();
+        String val = "(5+8)*3/(6-7)";
         ClasePrincipal cl = new ClasePrincipal();
         cl.EntradaDatos(val);
 
