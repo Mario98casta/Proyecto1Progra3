@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.StageStyle;
 
 import java.util.Optional;
 
@@ -32,7 +33,7 @@ public class HelloController {
         TxTResultado.appendText("SE COLOCA EL RESULTADO");
         TxtRecorridoPostorden.appendText("recorrido postorden ");
         TxtRecorridoInorden.appendText("recorrido inorden ");
-        int ValorNumerio = showNumericInputDialog("A");
+        int ValorNumerio = Valor_a_Variables("A");
         TxTResultado.setText(String.valueOf(ValorNumerio));
 
 
@@ -63,28 +64,31 @@ public class HelloController {
         BtResultado.setCursor(Cursor.DEFAULT);
 
     }
-    public static int showNumericInputDialog( String contentText) {
+    public static int Valor_a_Variables(String contentText) {
         TextInputDialog dialog = new TextInputDialog();
+        DialogPane dialogPane = dialog.getDialogPane();
         dialog.setTitle("De Variable A Valor");
         dialog.setHeaderText("Introduce valor de "+contentText+":");
         dialog.setContentText("Valor Numerico:");
+      //  dialog.initStyle(true);
 
-        String resultText;
+        String ResultText;
         int num = 0;
         do {
             Optional<String> result = dialog.showAndWait();
             if (result.isPresent()) {
-                resultText = result.get();
+                ResultText = result.get();
                 try {
-                    num = Integer.parseInt(resultText);
+                    num = Integer.parseInt(ResultText);
                 } catch (NumberFormatException e) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Error");
-                    alert.setContentText("El valor introducido no es un número entero válido.");
-                    alert.showAndWait();
+                    Alert alerta = new Alert(Alert.AlertType.ERROR);
+                    alerta.setTitle("Error al Ingresar Valor");
+                    alerta.setContentText("El valor introducido no es válido.");
+                    alerta.showAndWait();
+
                 }
             } else {
-                resultText = "";
+                ResultText = "";
                 break;
             }
         } while (num == 0);
