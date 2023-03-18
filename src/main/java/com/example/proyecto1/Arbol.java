@@ -86,6 +86,16 @@ public class Arbol {
         }
     }
 
+    private String imprimir2(Nodo raíz){
+        String r = "";
+        if(raíz !=null){
+            //
+            r = r.concat(raíz.getdato() + "");
+        }
+        return r;
+    }
+
+
 
     public void preorden() {
         this.preorden(this.raiz);

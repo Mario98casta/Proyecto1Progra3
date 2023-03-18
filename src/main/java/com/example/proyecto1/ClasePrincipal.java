@@ -15,7 +15,7 @@ public class ClasePrincipal {
         System.out.println();
         arbol.imprimirInOrden();
         System.out.println();
-        arbol.imprimirPreOrden();
+
         //System.out.println(arbol.getImprimirposOrden());
         //postorden = arbol.imprimirPosOrden();
         /*
