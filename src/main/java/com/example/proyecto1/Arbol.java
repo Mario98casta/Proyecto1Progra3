@@ -4,48 +4,18 @@ import java.util.EmptyStackException;
 import java.util.Stack;
 
 public class Arbol {
+
+    public String preorden,postorden,inorden;
     private Nodo raiz;
+    private String cadena;
 
     public Arbol() {
-
+        raiz = null;
+        cadena = null;
     }
 
-    private boolean existe(Nodo n, int busqueda) {
-        if (n == null) {
-            return false;
-        }
-        if (n.getDato() == busqueda) {
-            return true;
-        } else if (busqueda < n.getDato()) {
-            return existe(n.getizq(), busqueda);
-        } else {
-            return existe(n.getder(), busqueda);
-        }
-
-    }
-
-    public void insertar(int dato) {
-        if (this.raiz == null) {
-            this.raiz = new Nodo(dato);
-        } else {
-            this.insertar(this.raiz, dato);
-        }
-    }
-
-    private void insertar(Nodo padre, int dato) {
-        if (dato > padre.getDato()) {
-            if (padre.getder() == null) {
-                padre.setder(new Nodo(dato));
-            } else {
-                this.insertar(padre.getder(), dato);
-            }
-        } else {
-            if (padre.getizq() == null) {
-                padre.setizq(new Nodo(dato));
-            } else {
-                this.insertar(padre.getizq(), dato);
-            }
-        }
+    public Arbol(Nodo raiz) {
+        this.raiz = raiz;
     }
 
     private void preorden(Nodo n) {
@@ -53,6 +23,18 @@ public class Arbol {
             n.imprimirDato();
             preorden(n.getizq());
             preorden(n.getder());
+        }
+    }
+
+    public void imprimirPreOrden() {
+        imprimirPreOrden(this.raiz);
+    }
+
+    private void imprimirPreOrden(Nodo raiz) {
+        if (raiz != null) {
+            System.out.print(raiz.getdato() + " ");
+            imprimirPreOrden(raiz.getizq());
+            imprimirPreOrden(raiz.getder());
         }
     }
 
@@ -64,6 +46,26 @@ public class Arbol {
         }
     }
 
+    public void imprimirInOrden() {
+        imprimirInOrden(this.raiz);
+    }
+
+    private void imprimirInOrden(Nodo raiz) {
+        if (raiz != null) {
+            imprimirInOrden(raiz.getizq());
+            System.out.print(raiz.getdato() + " ");
+            imprimirInOrden(raiz.getder());
+        }
+    }
+
+    public Nodo getRaiz() {
+        return raiz;
+    }
+
+    public void setRaiz(Nodo raiz) {
+        this.raiz = raiz;
+    }
+
     private void postorden(Nodo n) {
         if (n != null) {
             postorden(n.getizq());
@@ -72,11 +74,34 @@ public class Arbol {
         }
     }
 
+    public void imprimirPosOrden() {
+        imprimirPosOrden(this.raiz);
+    }
+
+    private void imprimirPosOrden(Nodo raiz) {
+        if (raiz != null) {
+            imprimirPosOrden(raiz.getizq());
+            imprimirPosOrden(raiz.getder());
+            System.out.print(raiz.getdato() + " ");
+        }
+    }
+
+    private String imprimir2(Nodo raíz){
+        String r = "";
+        if(raíz !=null){
+            //
+            r = r.concat(raíz.getdato() + "");
+        }
+        return r;
+    }
+
 
 
     public void preorden() {
         this.preorden(this.raiz);
     }
+
+
 
     public void inorden() {
         this.inorden(this.raiz);
@@ -84,6 +109,24 @@ public class Arbol {
 
     public void postorden() {
         this.postorden(this.raiz);
+    }
+
+    private void recorrerPreOrden(StringBuilder sb, Nodo node) {
+        if (node != null) {
+            sb.append(node.getdato());
+            sb.append("\n");
+            recorrerPreOrden(sb, node.getizq());
+            recorrerPreOrden(sb, node.getder());
+        }
+    }
+
+    private void recorrerPosOrden(StringBuilder sb, Nodo node) {
+        if (node != null) {
+            recorrerPosOrden(sb, node.getizq());
+            recorrerPosOrden(sb, node.getder());
+            sb.append(node.getdato());
+            sb.append("\n");
+        }
     }
 
     public Nodo CrearArbol(String cadena){
@@ -110,10 +153,25 @@ public class Arbol {
             }
             else{
                 //La entrada actual es un operando.
-                s.push(new Nodo(c+""));
+                // s.push(new Nodo(c+""));
             }
         }
         return s.peek(); //Retorna el arbol sin borrarlo de la pila.
+    }
+
+    public Nodo agregar(char caracter) {
+        Nodo nodo = new Nodo();
+        nodo.setdato(caracter);
+        nodo.setder(null);
+        nodo.setizq(null);
+        return nodo;
+    }
+
+    public void Generar(String cadena) {
+        cadena = "(" + cadena;
+        cadena += ")";
+        this.cadena = cadena;
+        this.raiz = Generar();
     }
 
     public boolean esOperador(String nuevo_texto){
@@ -127,5 +185,59 @@ public class Arbol {
         return false;
     }
 
+    public Nodo Generar() {
+        String cadena = this.cadena;
+        Stack<Nodo> pila = new Stack<>();
+        Stack<Character> pila2 = new Stack<>();
 
+        int[] simbolo = new int[123];
+        simbolo['+'] = simbolo['-'] = 1;
+        simbolo['/'] = simbolo['*'] = 2;
+        simbolo['^'] = 3;
+        simbolo[')'] = 0;
+
+        Nodo aux;
+        Nodo aux1;
+        Nodo aux2;
+
+        for (int i = 0; i < cadena.length(); i++) {
+            if (cadena.charAt(i) == '(') {
+                pila2.add(cadena.charAt(i));
+            }
+            else if (Character.isDigit(cadena.charAt(i))) {
+                aux = agregar(cadena.charAt(i));
+                pila.add(aux);
+            } else if (simbolo[cadena.charAt(i)] > 0) {
+                while (!pila2.isEmpty() && pila2.peek() != '(' && ((cadena.charAt(i) != '^' && simbolo[pila2.peek()] >= simbolo[cadena.charAt(i)]) || (cadena.charAt(i) == '^' && simbolo[pila2.peek()] > simbolo[cadena.charAt(i)]))) {
+                    aux = agregar(pila2.peek());
+                    pila2.pop();
+                    aux1 = pila.peek();
+                    pila.pop();
+                    aux2 = pila.peek();
+                    pila.pop();
+                    aux.setizq(aux2);
+                    aux.setder(aux1);
+                    pila.add(aux);
+                }
+
+                pila2.push(cadena.charAt(i));
+            } else if (cadena.charAt(i) == ')') {
+                while (!pila2.isEmpty() && pila2.peek() != '(') {
+                    aux = agregar(pila2.peek());
+                    pila2.pop();
+                    aux1 = pila.peek();
+                    pila.pop();
+                    aux2 = pila.peek();
+                    pila.pop();
+                    aux.setizq(aux2);
+                    aux.setder(aux1);
+                    pila.add(aux);
+                }
+
+                pila2.pop();
+            }
+        }
+        aux = pila.peek();
+        return aux;
+    }
 }

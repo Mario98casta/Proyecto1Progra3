@@ -31,6 +31,7 @@ public class HelloController {
             BtNuevo.setVisible(true);
         BtResultado.setVisible(false);
 <<<<<<< HEAD
+<<<<<<< HEAD
         TxTResultado.appendText("SE COLOCA EL RESULTADO");
         TxtRecorridoPostorden.appendText("recorrido postorden ");
         TxtRecorridoInorden.appendText("recorrido inorden ");
@@ -38,11 +39,15 @@ public class HelloController {
         TxTResultado.setText(String.valueOf(ValorNumerio));
 =======
 
+=======
+        Arbol arbol = new Arbol();
+>>>>>>> marco
         String val = "(5+8)*3/(6-7)";
         ClasePrincipal cl = new ClasePrincipal();
         cl.EntradaDatos(val);
 >>>>>>> 2ec1b66695c45bd1041adf11639f72b860a4f1da
 
+        //TxtRecorridoPostorden.setText("hola");
 
     }
 
