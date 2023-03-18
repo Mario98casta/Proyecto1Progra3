@@ -29,11 +29,12 @@ public class HelloController {
     protected void CLICKBTResultado() {
             BtNuevo.setVisible(true);
         BtResultado.setVisible(false);
-
+        Arbol arbol = new Arbol();
         String val = "(5+8)*3/(6-7)";
         ClasePrincipal cl = new ClasePrincipal();
         cl.EntradaDatos(val);
 
+        //TxtRecorridoPostorden.setText("hola");
 
     }
     @FXML
