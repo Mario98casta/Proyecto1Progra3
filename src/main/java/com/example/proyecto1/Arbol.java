@@ -5,7 +5,7 @@ import java.util.Stack;
 
 public class Arbol {
 
-    public String preorden,postorden,inorden;
+    //public String preorden,postorden,inorden;
     private Nodo raiz;
     private String cadena;
 
@@ -26,16 +26,19 @@ public class Arbol {
         }
     }
 
-    public void imprimirPreOrden() {
-        imprimirPreOrden(this.raiz);
+    public String imprimirPreOrden() {
+        String aux = imprimirPreOrden(this.raiz);
+        return aux;
     }
 
-    private void imprimirPreOrden(Nodo raiz) {
+    private String imprimirPreOrden(Nodo raiz) {
+        String dato="";
         if (raiz != null) {
             System.out.print(raiz.getdato() + " ");
             imprimirPreOrden(raiz.getizq());
             imprimirPreOrden(raiz.getder());
         }
+        return dato;
     }
 
     private void inorden(Nodo n) {
@@ -239,5 +242,26 @@ public class Arbol {
         }
         aux = pila.peek();
         return aux;
+    }
+
+    public void imprimirArbol() {
+        imprimirArbol(this.raiz);
+    }
+
+    private void imprimirArbol(Nodo raiz) {
+        imprimirArbol(raiz, 0);
+    }
+
+    private void imprimirArbol(Nodo raiz, int separador) {
+        int espacios = 3;
+        if (raiz == null) {return;}
+        //separador += espacios;
+        imprimirArbol(raiz.getder());
+        //System.out.print("\n");
+        /*for (int i = espacios; i < separador; i++) {
+            System.out.print(" . ");
+        }*/
+        System.out.print(raiz.getdato());
+        imprimirArbol(raiz.getizq(), separador);
     }
 }

@@ -30,22 +30,19 @@ public class HelloController {
     protected void CLICKBTResultado() {
             BtNuevo.setVisible(true);
         BtResultado.setVisible(false);
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         TxTResultado.appendText("SE COLOCA EL RESULTADO");
         TxtRecorridoPostorden.appendText("recorrido postorden ");
         TxtRecorridoInorden.appendText("recorrido inorden ");
         int ValorNumerio = Valor_a_Variables("A");
         TxTResultado.setText(String.valueOf(ValorNumerio));
-=======
 
-=======
         Arbol arbol = new Arbol();
->>>>>>> marco
-        String val = "(5+8)*3/(6-7)";
+
+        String val = "1";
         ClasePrincipal cl = new ClasePrincipal();
         cl.EntradaDatos(val);
->>>>>>> 2ec1b66695c45bd1041adf11639f72b860a4f1da
+
 
         //TxtRecorridoPostorden.setText("hola");
 
@@ -59,17 +56,12 @@ public class HelloController {
         TxTResultado.clear();
         TxtRecorridoPostorden.clear();
         TxtRecorridoInorden.clear();
-
-
-
-
     }
 
 
     public void HAND(MouseEvent mouseEvent) {
         BtResultado.setCursor(Cursor.HAND);
         BtNuevo.setCursor(Cursor.HAND);
-
     }
 
     public void DEFAULT(MouseEvent mouseEvent) {
