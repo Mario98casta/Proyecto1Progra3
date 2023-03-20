@@ -2,7 +2,7 @@ package com.example.proyecto1;
 
 public class ClasePrincipal {
 
-    public ClasePrincipal() {
+    /*public ClasePrincipal() {
 
     }
 
@@ -29,6 +29,6 @@ public class ClasePrincipal {
         System.out.println();
          */
         return "master";
-    }
+    }*/
 
 }

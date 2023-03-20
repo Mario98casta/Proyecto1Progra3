@@ -7,15 +7,76 @@ public class Arbol {
 
     public String preorden,postorden,inorden;
     private Nodo raiz;
+<<<<<<< HEAD
     private String cadena;
 
     public Arbol() {
         raiz = null;
         cadena = null;
+=======
+    public Arbol() {
+        raiz = null;
+    }
+
+    // Inserta un valor en el árbol
+    public void insertarNodo(int valor) {
+        raiz = insertarRectificarNodo(raiz, valor);
+    }
+
+    // Función auxiliar para insertar un valor en el árbol si es mayor
+    private Nodo insertarRectificarNodo(Nodo nodo, int valor) {
+        if (nodo == null) {
+            nodo = new Nodo(valor);
+            return nodo;
+        }
+
+        if (valor < nodo.ValorNodo) {
+            nodo.izquierdo = insertarRectificarNodo(nodo.izquierdo, valor);
+        } else if (valor > nodo.ValorNodo) {
+            nodo.derecho = insertarRectificarNodo(nodo.derecho, valor);
+        }
+
+        return nodo;
+    }
+
+    public void preorden() {
+        Validarpreorden(raiz);
+    }
+
+    // Función auxiliar para el recorrido preorden
+    private void Validarpreorden(Nodo nodo) {
+        if (nodo != null) {
+            System.out.print(nodo.ValorNodo + " ");
+            Validarpreorden(nodo.izquierdo);
+            Validarpreorden(nodo.derecho);
+        }
+    }
+
+    public void Inorden() {
+        ValidarInorden(raiz);
+    }
+
+    // Función auxiliar para el recorrido preorden
+    private void ValidarInorden(Nodo nodo) {
+        if (nodo != null) {
+            Validarpreorden(nodo.izquierdo);
+            System.out.print(nodo.ValorNodo + " ");
+            Validarpreorden(nodo.derecho);
+        }
+    }
+
+
+    /*public Arbol() {
+
+>>>>>>> mario98
     }
 
     public Arbol(Nodo raiz) {
         this.raiz = raiz;
+    }
+
+    public void preorden() {
+        this.preorden(this.raiz);
     }
 
     private void preorden(Nodo n) {
@@ -97,9 +158,7 @@ public class Arbol {
 
 
 
-    public void preorden() {
-        this.preorden(this.raiz);
-    }
+
 
 
 
@@ -133,7 +192,7 @@ public class Arbol {
         if(cadena.isEmpty()==true){
             return null;
         }
-        Stack<Nodo> s=new Stack();//Primer uso de Stack en Java, jueves 1 de setiembre del 2022.
+        Stack<Nodo> s=new Stack();//Primer uso de Stack en Java
         for(char c: cadena.toCharArray()){
             if(this.esOperador(c + "")==true){
                 //La entrada actual es un operador.
@@ -185,6 +244,7 @@ public class Arbol {
         return false;
     }
 
+<<<<<<< HEAD
     public Nodo Generar() {
         String cadena = this.cadena;
         Stack<Nodo> pila = new Stack<>();
@@ -240,4 +300,7 @@ public class Arbol {
         aux = pila.peek();
         return aux;
     }
+=======
+*/
+>>>>>>> mario98
 }
