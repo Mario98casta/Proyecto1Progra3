@@ -3,27 +3,16 @@ import java.util.EmptyStackException;
 import java.util.Stack;
 
 public class Nodo {
-<<<<<<< HEAD
     public char dato;
-=======
-   /* public int dato;
->>>>>>> mario98
     public Nodo izq;
     public Nodo der;
     public String texto="";
 
-<<<<<<< HEAD
     public Nodo padre;
 
     public Nodo() {
         this.izq = null;
         this.der = null;
-=======
-    public Nodo (int dato){
-        this.dato=dato;
-        this.izq= null;
-        this.der=null;
->>>>>>> mario98
     }
 
     public Nodo(char dato) {
@@ -88,31 +77,10 @@ public class Nodo {
         return false;
     }
 
-<<<<<<< HEAD
     public void postOrder(){
         vPOrden="";
         System.out.println(postOrder(this));
     }
-=======
-
-
-
-
-
-
-    public Nodo CrearArbol(String cadena){
-        if(cadena.isEmpty()==true){
-            return null;
-        }
-        Stack<Nodo> s=new Stack();//Primer uso de Stack en Java, jueves 1 de setiembre del 2022.
-        for(char c: cadena.toCharArray()){
-            if(this.esOperador(c + "")==true){
-                //La entrada actual es un operador.
-                Nodo x=null;
-                try{
-                    x=s.pop();
-                }catch(EmptyStackException e){}
->>>>>>> mario98
 
     private String vPOrden="";
     private String postOrder(Nodo nueva_raizq){
@@ -149,15 +117,4 @@ public class Nodo {
         }
         return vInOrden;
     }
-    */
-
-    int ValorNodo;
-    Nodo izquierdo, derecho;
-
-    public Nodo(int ValorNodo) {
-        this.ValorNodo = ValorNodo;
-        izquierdo = null;
-        derecho = null;
-    }
-
 }

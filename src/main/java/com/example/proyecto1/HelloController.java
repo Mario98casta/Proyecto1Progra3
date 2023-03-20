@@ -12,7 +12,7 @@ public class HelloController {
 
     private static Object AlertType;
     @FXML
-   public Button BtResultado;
+    public Button BtResultado;
     @FXML
     public Button BtNuevo;
     @FXML
@@ -31,7 +31,7 @@ public class HelloController {
 
         acaracteres = NuevaCadena.toCharArray();
 
-       for (int i=0; i < cadena.length(); i++){
+        for (int i=0; i < cadena.length(); i++){
 
             if (Character.isLetter(acaracteres[i])) {
                 int ValorNum = Valor_a_Variables(String.valueOf(acaracteres[i]));
@@ -45,56 +45,31 @@ public class HelloController {
 
 
         }
-               NuevaCadena= String.valueOf(acaracteres);
+        NuevaCadena= String.valueOf(acaracteres);
 
         return NuevaCadena;
     }
 
     @FXML
     protected void CLICKBTResultado() {
-            BtNuevo.setVisible(true);
+        BtNuevo.setVisible(true);
         BtResultado.setVisible(false);
-<<<<<<< HEAD
-
-        TxTResultado.appendText("SE COLOCA EL RESULTADO");
-        TxtRecorridoPostorden.appendText("recorrido postorden ");
-        TxtRecorridoInorden.appendText("recorrido inorden ");
-        int ValorNumerio = Valor_a_Variables("A");
-        TxTResultado.setText(String.valueOf(ValorNumerio));
-
-        Arbol arbol = new Arbol();
-
-        String val = "1";
-        ClasePrincipal cl = new ClasePrincipal();
-        cl.EntradaDatos(val);
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> mario98
         TxTResultado.appendText("SE COLOCA EL RESULTADO");
         TxtRecorridoPostorden.appendText("recorrido postorden ");
         TxtRecorridoInorden.appendText("recorrido inorden ");
 
-<<<<<<< HEAD
-=======
+
         Arbol arbol = new Arbol();
->>>>>>> marco
-        String val = "(5+8)*3/(6-7)";
-=======
-        TxTResultado.setText(String.valueOf(ValorNumero(TxtIngresoExp.getText())));
-        //System.out.println(cadena);
-
-
-       /* String val = "(5+8)*3/(6-7)";
->>>>>>> mario98
         ClasePrincipal cl = new ClasePrincipal();
-        cl.EntradaDatos(val);*/
->>>>>>> d98833f4dfd3ff175a522eac2b6b4690dd17d73e
+        String[] recorridos = new String[2];
+
+        String val = String.valueOf(ValorNumero(TxtIngresoExp.getText()));
+
+        recorridos = cl.EntradaDatos(val);
+        TxTResultado.setText(val);
+        TxtRecorridoPostorden.setText(recorridos[0]);
 
 
-        //TxtRecorridoPostorden.setText("hola");
 
     }
 
@@ -106,12 +81,17 @@ public class HelloController {
         TxTResultado.clear();
         TxtRecorridoPostorden.clear();
         TxtRecorridoInorden.clear();
+
+
+
+
     }
 
 
     public void HAND(MouseEvent mouseEvent) {
         BtResultado.setCursor(Cursor.HAND);
         BtNuevo.setCursor(Cursor.HAND);
+
     }
 
     public void DEFAULT(MouseEvent mouseEvent) {
@@ -128,7 +108,7 @@ public class HelloController {
 
 
         String ResultText;
-       int num = 0;
+        int num = 0;
         do {
             Optional<String> result = dialog.showAndWait();
             if (result.isPresent()) {
