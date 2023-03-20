@@ -12,9 +12,10 @@ public class ClasePrincipal {
         Nodo nodo = new Nodo();
         HelloController ventana = new HelloController();
         arbol.Generar(val);
-        String cadena = arbol.imprimirPreOrden();
-        System.out.println(cadena);
-        ventana.TxtRecorridoPostorden.appendText(cadena);
+        String aux = arbol.imprimirPreOrden();
+        System.out.println(aux);
+        ventana.TxtRecorridoPostorden.appendText(aux);
+        System.out.println("");
         return "master";
     }
 }

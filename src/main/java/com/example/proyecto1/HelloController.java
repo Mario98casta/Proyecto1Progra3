@@ -32,20 +32,16 @@ public class HelloController {
         BtResultado.setVisible(false);
 
         TxTResultado.appendText("SE COLOCA EL RESULTADO");
-        TxtRecorridoPostorden.appendText("recorrido postorden ");
+        TxtRecorridoPostorden.appendText("recorrido inorden ");
         TxtRecorridoInorden.appendText("recorrido inorden ");
         int ValorNumerio = Valor_a_Variables("A");
         TxTResultado.setText(String.valueOf(ValorNumerio));
-
+        TxtRecorridoPostorden.setText("holamundot");
+        TxtRecorridoInorden.setText("holamundoi");
         Arbol arbol = new Arbol();
-
-        String val = "1";
+        String val = TxtIngresoExp.getText();
         ClasePrincipal cl = new ClasePrincipal();
         cl.EntradaDatos(val);
-
-
-        //TxtRecorridoPostorden.setText("hola");
-
     }
 
     @FXML

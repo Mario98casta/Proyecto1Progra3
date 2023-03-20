@@ -35,9 +35,10 @@ public class Arbol {
         String dato="";
         if (raiz != null) {
             System.out.print(raiz.getdato() + " ");
-            imprimirPreOrden(raiz.getizq());
-            imprimirPreOrden(raiz.getder());
-        }
+            String a = imprimirPreOrden(raiz.getizq());
+            String b= imprimirPreOrden(raiz.getder());
+            dato = raiz.getdato() + " " +a +b ;
+         }
         return dato;
     }
 
