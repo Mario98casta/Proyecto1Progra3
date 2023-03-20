@@ -2,7 +2,7 @@ package com.example.proyecto1;
 
 public class ClasePrincipal {
 
-    public ClasePrincipal() {
+    /*public ClasePrincipal() {
 
     }
 
@@ -16,5 +16,10 @@ public class ClasePrincipal {
         System.out.println(cadena);
         ventana.TxtRecorridoPostorden.appendText(cadena);
         return "master";
+<<<<<<< HEAD
     }
+=======
+    }*/
+
+>>>>>>> d98833f4dfd3ff175a522eac2b6b4690dd17d73e
 }

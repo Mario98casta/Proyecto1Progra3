@@ -4,7 +4,6 @@ import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.StageStyle;
 
 import java.util.Optional;
 
@@ -26,10 +25,36 @@ public class HelloController {
     @FXML
     public TextArea TxtRecorridoPostorden;
 
+    public String ValorNumero(String cadena){
+        String NuevaCadena = cadena;
+        char [] acaracteres;
+
+        acaracteres = NuevaCadena.toCharArray();
+
+       for (int i=0; i < cadena.length(); i++){
+
+            if (Character.isLetter(acaracteres[i])) {
+                int ValorNum = Valor_a_Variables(String.valueOf(acaracteres[i]));
+
+                acaracteres[i]= Integer.toString(ValorNum).charAt(0);
+
+
+                System.out.println(acaracteres[i]);
+                System.out.println(ValorNum);
+            }
+
+
+        }
+               NuevaCadena= String.valueOf(acaracteres);
+
+        return NuevaCadena;
+    }
+
     @FXML
     protected void CLICKBTResultado() {
             BtNuevo.setVisible(true);
         BtResultado.setVisible(false);
+<<<<<<< HEAD
 
         TxTResultado.appendText("SE COLOCA EL RESULTADO");
         TxtRecorridoPostorden.appendText("recorrido postorden ");
@@ -42,6 +67,31 @@ public class HelloController {
         String val = "1";
         ClasePrincipal cl = new ClasePrincipal();
         cl.EntradaDatos(val);
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> mario98
+        TxTResultado.appendText("SE COLOCA EL RESULTADO");
+        TxtRecorridoPostorden.appendText("recorrido postorden ");
+        TxtRecorridoInorden.appendText("recorrido inorden ");
+
+<<<<<<< HEAD
+=======
+        Arbol arbol = new Arbol();
+>>>>>>> marco
+        String val = "(5+8)*3/(6-7)";
+=======
+        TxTResultado.setText(String.valueOf(ValorNumero(TxtIngresoExp.getText())));
+        //System.out.println(cadena);
+
+
+       /* String val = "(5+8)*3/(6-7)";
+>>>>>>> mario98
+        ClasePrincipal cl = new ClasePrincipal();
+        cl.EntradaDatos(val);*/
+>>>>>>> d98833f4dfd3ff175a522eac2b6b4690dd17d73e
 
 
         //TxtRecorridoPostorden.setText("hola");
@@ -75,10 +125,10 @@ public class HelloController {
         dialog.setTitle("De Variable A Valor");
         dialog.setHeaderText("Introduce valor de "+contentText+":");
         dialog.setContentText("Valor Numerico:");
-      //  dialog.initStyle(true);
+
 
         String ResultText;
-        int num = 0;
+       int num = 0;
         do {
             Optional<String> result = dialog.showAndWait();
             if (result.isPresent()) {
