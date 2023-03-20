@@ -3,14 +3,15 @@ import java.util.EmptyStackException;
 import java.util.Stack;
 
 public class Nodo {
-    public int dato;
+   /* public int dato;
     public Nodo izq;
     public Nodo der;
     public String texto="";
 
     public Nodo (int dato){
         this.dato=dato;
-        this.izq=this.der=null;
+        this.izq= null;
+        this.der=null;
     }
 
     public Nodo(String nuevo){
@@ -62,6 +63,12 @@ public class Nodo {
         return false;
     }
 
+
+
+
+
+
+
     public Nodo CrearArbol(String cadena){
         if(cadena.isEmpty()==true){
             return null;
@@ -91,4 +98,15 @@ public class Nodo {
         }
         return s.peek(); //Retorna el arbol sin borrarlo de la pila.
     }
+    */
+
+    int ValorNodo;
+    Nodo izquierdo, derecho;
+
+    public Nodo(int ValorNodo) {
+        this.ValorNodo = ValorNodo;
+        izquierdo = null;
+        derecho = null;
+    }
+
 }

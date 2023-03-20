@@ -2,7 +2,7 @@ package com.example.proyecto1;
 
 public class ClasePrincipal {
 
-    public ClasePrincipal() {
+    /*public ClasePrincipal() {
 
     }
 
@@ -10,6 +10,6 @@ public class ClasePrincipal {
         Arbol arbol = new Arbol();
         arbol.CrearArbol(val);
         return "master";
-    }
+    }*/
 
 }
