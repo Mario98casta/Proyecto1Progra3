@@ -38,7 +38,11 @@ public class Arbol {
             String a = imprimirPreOrden(raiz.getizq());
             String b= imprimirPreOrden(raiz.getder());
             dato = raiz.getdato() + " " +a +b ;
+<<<<<<< HEAD
          }
+=======
+        }
+>>>>>>> master
         return dato;
     }
 
@@ -171,11 +175,13 @@ public class Arbol {
         return nodo;
     }
 
-    public void Generar(String cadena) {
+    public Nodo Generar(String cadena) {
         cadena = "(" + cadena;
         cadena += ")";
         this.cadena = cadena;
         this.raiz = Generar();
+
+        return  this.raiz;
     }
 
     public boolean esOperador(String nuevo_texto){

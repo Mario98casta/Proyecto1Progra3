@@ -2,13 +2,16 @@ package com.example.proyecto1;
 
 public class ClasePrincipal {
 
-    public ClasePrincipal() {
+ ClasePrincipal() {
 
     }
 
 
-    public  String  EntradaDatos(String val){
+    public  String[]  EntradaDatos(String val) {
+        String[] recorridos = new String[2];
+
         Arbol arbol = new Arbol();
+<<<<<<< HEAD
         Nodo nodo = new Nodo();
         HelloController ventana = new HelloController();
         arbol.Generar(val);
@@ -17,5 +20,16 @@ public class ClasePrincipal {
         ventana.TxtRecorridoPostorden.appendText(aux);
         System.out.println("");
         return "master";
+=======
+        Nodo nodoGenerado = new Nodo();
+
+        nodoGenerado = arbol.Generar(val);
+
+        recorridos[0] = arbol.imprimirPreOrden();
+
+
+        return recorridos;
+>>>>>>> master
     }
+
 }
