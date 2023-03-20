@@ -57,16 +57,6 @@ public class HelloController {
         TxTResultado.appendText("SE COLOCA EL RESULTADO");
         TxtRecorridoPostorden.appendText("recorrido inorden ");
         TxtRecorridoInorden.appendText("recorrido inorden ");
-<<<<<<< HEAD
-        int ValorNumerio = Valor_a_Variables("A");
-        TxTResultado.setText(String.valueOf(ValorNumerio));
-        TxtRecorridoPostorden.setText("holamundot");
-        TxtRecorridoInorden.setText("holamundoi");
-        Arbol arbol = new Arbol();
-        String val = TxtIngresoExp.getText();
-        ClasePrincipal cl = new ClasePrincipal();
-        cl.EntradaDatos(val);
-=======
 
 
         Arbol arbol = new Arbol();
@@ -81,7 +71,6 @@ public class HelloController {
 
 
 
->>>>>>> master
     }
 
     @FXML

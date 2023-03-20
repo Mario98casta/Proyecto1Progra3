@@ -4,11 +4,8 @@ import java.util.EmptyStackException;
 import java.util.Stack;
 
 public class Arbol {
-
-    //public String preorden,postorden,inorden;
     private Nodo raiz;
     private String cadena;
-
     public Arbol() {
         raiz = null;
         cadena = null;
@@ -16,14 +13,6 @@ public class Arbol {
 
     public Arbol(Nodo raiz) {
         this.raiz = raiz;
-    }
-
-    private void preorden(Nodo n) {
-        if (n != null) {
-            n.imprimirDato();
-            preorden(n.getizq());
-            preorden(n.getder());
-        }
     }
 
     public String imprimirPreOrden() {
@@ -38,32 +27,24 @@ public class Arbol {
             String a = imprimirPreOrden(raiz.getizq());
             String b= imprimirPreOrden(raiz.getder());
             dato = raiz.getdato() + " " +a +b ;
-<<<<<<< HEAD
-         }
-=======
         }
->>>>>>> master
         return dato;
     }
 
-    private void inorden(Nodo n) {
-        if (n != null) {
-            inorden(n.getizq());
-            n.imprimirDato();
-            inorden(n.getder());
-        }
+    public String imprimirInOrden() {
+        String aux = imprimirInOrden(this.raiz);
+        return aux;
     }
 
-    public void imprimirInOrden() {
-        imprimirInOrden(this.raiz);
-    }
-
-    private void imprimirInOrden(Nodo raiz) {
+    private String imprimirInOrden(Nodo raiz) {
+        String dato="";
         if (raiz != null) {
-            imprimirInOrden(raiz.getizq());
+            String a = imprimirInOrden(raiz.getizq());
             System.out.print(raiz.getdato() + " ");
-            imprimirInOrden(raiz.getder());
+            String b = imprimirInOrden(raiz.getder());
+            dato = a + raiz.getdato() +" " + b;
         }
+        return dato;
     }
 
     public Nodo getRaiz() {
@@ -74,52 +55,23 @@ public class Arbol {
         this.raiz = raiz;
     }
 
-    private void postorden(Nodo n) {
-        if (n != null) {
-            postorden(n.getizq());
-            postorden(n.getder());
-            n.imprimirDato();
-        }
+    public String imprimirPosOrden() {
+        String aux = imprimirPosOrden(this.raiz);
+        return aux;
     }
 
-    public void imprimirPosOrden() {
-        imprimirPosOrden(this.raiz);
-    }
-
-    private void imprimirPosOrden(Nodo raiz) {
+    private String  imprimirPosOrden(Nodo raiz) {
+        String dato="";
         if (raiz != null) {
-            imprimirPosOrden(raiz.getizq());
-            imprimirPosOrden(raiz.getder());
+            String a = imprimirPosOrden(raiz.getizq());
+            String b =imprimirPosOrden(raiz.getder());
             System.out.print(raiz.getdato() + " ");
+            dato = a + b + raiz.getdato();
         }
+        return dato;
     }
 
-    private String imprimir2(Nodo raíz){
-        String r = "";
-        if(raíz !=null){
-            //
-            r = r.concat(raíz.getdato() + "");
-        }
-        return r;
-    }
-
-
-
-    public void preorden() {
-        this.preorden(this.raiz);
-    }
-
-
-
-    public void inorden() {
-        this.inorden(this.raiz);
-    }
-
-    public void postorden() {
-        this.postorden(this.raiz);
-    }
-
-    private void recorrerPreOrden(StringBuilder sb, Nodo node) {
+   private void recorrerPreOrden(StringBuilder sb, Nodo node) {
         if (node != null) {
             sb.append(node.getdato());
             sb.append("\n");
