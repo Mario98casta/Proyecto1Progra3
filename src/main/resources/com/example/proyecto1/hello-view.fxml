@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="PanelPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="620.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyecto1.HelloController">
+<AnchorPane fx:id="PanelPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="620.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyecto1.HelloController">
 
    <children>
-      <TextField fx:id="TxTResultado" editable="false" layoutX="351.0" layoutY="87.0" prefHeight="25.0" prefWidth="223.0" style="-fx-background-color: #ffffff;" />
-      <TextArea fx:id="TxtRecorridoPostorden" editable="false" layoutX="351.0" layoutY="165.0" prefHeight="85.0" prefWidth="223.0" style="-fx-background-color: #ffffff;" />
-      <Label alignment="TOP_CENTER" layoutX="347.0" layoutY="47.0" prefHeight="17.0" prefWidth="223.0" text=" Resultado" textAlignment="CENTER" wrapText="true">
+      <TextField fx:id="TxTResultado" editable="false" layoutX="362.0" layoutY="64.0" prefHeight="25.0" prefWidth="212.0" promptText="Resultado de la Operacion" style="-fx-background-color: #ffffff;" />
+      <TextArea fx:id="TxtRecorridoPostorden" editable="false" layoutX="364.0" layoutY="138.0" prefHeight="44.0" prefWidth="212.0" promptText="Recorrido Postorden" style="-fx-background-color: #ffffff;" />
+      <Label alignment="TOP_CENTER" layoutX="359.0" layoutY="31.0" prefHeight="17.0" prefWidth="212.0" text=" Resultado" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Broadway" size="14.0" />
          </font>
@@ -32,7 +37,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label alignment="TOP_CENTER" layoutX="348.0" layoutY="130.0" prefHeight="17.0" prefWidth="223.0" text="Recorido en postorden" textAlignment="CENTER" wrapText="true">
+      <Label alignment="TOP_CENTER" layoutX="359.0" layoutY="106.0" prefHeight="17.0" prefWidth="212.0" text="Recorrido en Postorden" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Broadway" size="14.0" />
          </font>
@@ -53,7 +58,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label alignment="TOP_CENTER" layoutX="27.0" layoutY="48.0" prefHeight="33.0" prefWidth="291.0" text="SUPER CALCULADORA" textAlignment="CENTER" wrapText="true">
+      <Label alignment="TOP_CENTER" layoutX="28.0" layoutY="31.0" prefHeight="33.0" prefWidth="291.0" text="SUPER CALCULADORA" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Broadway" size="24.0" />
          </font>
@@ -107,8 +112,8 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <TextArea fx:id="TxtRecorridoInorden" editable="false" layoutX="351.0" layoutY="295.0" prefHeight="85.0" prefWidth="223.0" style="-fx-background-color: #ffffff;" />
-      <Label alignment="TOP_CENTER" layoutX="358.0" layoutY="265.0" prefHeight="17.0" prefWidth="223.0" text="Recorido en inorden" textAlignment="CENTER" wrapText="true">
+      <TextArea fx:id="TxtRecorridoInorden" editable="false" layoutX="364.0" layoutY="226.0" prefHeight="44.0" prefWidth="212.0" promptText="Recorrido Inorden" style="-fx-background-color: #ffffff;" />
+      <Label alignment="TOP_CENTER" layoutX="365.0" layoutY="192.0" prefHeight="17.0" prefWidth="212.0" text="Recorrido en Inorden" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Broadway" size="14.0" />
          </font>
@@ -129,5 +134,27 @@
             </LinearGradient>
          </textFill>
       </Label>
+      <Label alignment="TOP_CENTER" layoutX="366.0" layoutY="282.0" prefHeight="17.0" prefWidth="212.0" text="Recorrido en Preorden" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Broadway" size="14.0" />
+         </font>
+         <textFill>
+            <LinearGradient cycleMethod="REFLECT" endX="0.33175355450236965" endY="0.5876777251184835" startX="0.40284360189573454" startY="0.49763033175355453">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9764705896377563" green="0.5803921818733215" blue="0.09019608050584793" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <TextArea fx:id="TxtRecorridopreorden" editable="false" layoutX="366.0" layoutY="317.0" prefHeight="44.0" prefWidth="212.0" promptText="Recorrido en Preorden" style="-fx-background-color: #ffffff;" />
    </children>
 </AnchorPane>

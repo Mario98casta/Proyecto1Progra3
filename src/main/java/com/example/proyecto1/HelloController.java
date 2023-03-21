@@ -24,6 +24,8 @@ public class HelloController {
     public TextArea TxtRecorridoInorden;
     @FXML
     public TextArea TxtRecorridoPostorden;
+    @FXML
+    public TextArea TxtRecorridopreorden;
 
     public String ValorNumero(String cadena){
         String NuevaCadena = cadena;
@@ -54,23 +56,18 @@ public class HelloController {
     protected void CLICKBTResultado() {
         BtNuevo.setVisible(true);
         BtResultado.setVisible(false);
-        TxTResultado.appendText("SE COLOCA EL RESULTADO");
-        TxtRecorridoPostorden.appendText("recorrido postorden ");
-        TxtRecorridoInorden.appendText("recorrido inorden ");
-
+        TxTResultado.appendText("Resultado de la Operacion");
+        TxtRecorridoPostorden.appendText("recorrido Postorden ");
+        TxtRecorridoInorden.appendText("Recorrido Inorden ");
+        TxtRecorridopreorden.appendText("Recorrido Preorden");
 
         Arbol arbol = new Arbol();
         ClasePrincipal cl = new ClasePrincipal();
         String[] recorridos = new String[2];
-
         String val = String.valueOf(ValorNumero(TxtIngresoExp.getText()));
-
         recorridos = cl.EntradaDatos(val);
         TxTResultado.setText(val);
         TxtRecorridoPostorden.setText(recorridos[0]);
-
-
-
     }
 
     @FXML
@@ -81,10 +78,7 @@ public class HelloController {
         TxTResultado.clear();
         TxtRecorridoPostorden.clear();
         TxtRecorridoInorden.clear();
-
-
-
-
+        TxtRecorridopreorden.clear();
     }
 
 
