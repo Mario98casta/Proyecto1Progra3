@@ -67,7 +67,10 @@ public class HelloController {
         String val = String.valueOf(ValorNumero(TxtIngresoExp.getText()));
         recorridos = cl.EntradaDatos(val);
         TxTResultado.setText(val);
-        TxtRecorridoPostorden.setText(recorridos[0]);
+        TxtRecorridoPostorden.setText(recorridos[2]);
+        TxtRecorridoInorden.setText(recorridos[1]);
+        TxtRecorridopreorden.setText(recorridos[0]);
+
     }
 
     @FXML
