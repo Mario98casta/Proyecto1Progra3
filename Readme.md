@@ -1,7 +1,7 @@
 **Mario Fernando Castañeda Perez** - 7690-20-145
 **William Josue Carrillo Sandoval** - 7690-21-3740
 **Marco Amed Marroquin Quiñonez** - 7690 -09-7104
-**Gustavo Enrique Carvajal Benito**
+**Gustavo Enrique Carvajal Benito** - 7690-16-676
 ![Logo de la universidad](/images/Logo.png)
 # PROYECTO 1
 ## Programacion 3
