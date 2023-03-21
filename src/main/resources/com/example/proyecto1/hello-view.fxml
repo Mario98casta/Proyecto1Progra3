@@ -16,7 +16,7 @@
    <children>
       <TextField fx:id="TxTResultado" editable="false" layoutX="362.0" layoutY="64.0" prefHeight="25.0" prefWidth="212.0" promptText="Resultado de la Operacion" style="-fx-background-color: #ffffff;" />
       <TextArea fx:id="TxtRecorridoPostorden" editable="false" layoutX="364.0" layoutY="138.0" prefHeight="44.0" prefWidth="212.0" promptText="Recorrido Postorden" style="-fx-background-color: #ffffff;" />
-      <Label alignment="TOP_CENTER" layoutX="359.0" layoutY="31.0" prefHeight="17.0" prefWidth="212.0" text=" Resultado" textAlignment="CENTER" wrapText="true">
+      <Label alignment="TOP_CENTER" layoutX="345.0" layoutY="31.0" prefHeight="17.0" prefWidth="247.0" text=" Resultado Exprecion Polaca" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Broadway" size="14.0" />
          </font>
